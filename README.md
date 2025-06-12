@@ -1,4 +1,4 @@
-# 🚀 Dockerized Multi-App Projects
+#  Dockerized Multi-App Projects
 
 This repository contains 4 different Docker Compose-powered applications:
 
@@ -22,12 +22,12 @@ Each app is located in its own directory and can be run independently.
 
 ---
 
-## 🧱 1. Simple Node.js Server (`1-docker-compose-app/`)
+##  1. Simple Node.js Server (`1-docker-compose-app/`)
 
 ### 📄 Description
 A basic Node.js HTTP server that returns a greeting message when accessed.
 
-### 🐳 docker-compose.yml
+###  docker-compose.yml
 ```yaml
 version: "3.4"
 services:
@@ -37,22 +37,22 @@ services:
       - "3001:3000"
 ```
 
-### 🚀 Run
+###  Run
 ```bash
 cd 1-docker-compose-app
 docker-compose up --build
 ```
 
-📍 **App runs at:** http://localhost:3001
+ **App runs at:** http://localhost:3001
 
 ---
 
-## 📋 2. Todo App with MongoDB (`2-todo-app/`)
+##  2. Todo App with MongoDB (`2-todo-app/`)
 
-### 📄 Description
+###  Description
 A todo application with MongoDB database backend for data persistence.
 
-### 🐳 docker-compose.yml
+###  docker-compose.yml
 ```yaml
 version: "3.4"
 services:
@@ -72,22 +72,22 @@ volumes:
   todo-app-data:
 ```
 
-### 🚀 Run
+###  Run
 ```bash
 cd 2-todo-app
 docker-compose up --build
 ```
 
-📍 **App runs at:** http://localhost:3000
+ **App runs at:** http://localhost:3000
 
 ---
 
-## 📝 3. WordPress Blog (`3-wordpress/`)
+##  3. WordPress Blog (`3-wordpress/`)
 
-### 📄 Description
+###  Description
 A complete WordPress blog setup with MySQL database backend.
 
-### 🐳 docker-compose.yml
+###  docker-compose.yml
 ```yaml
 version: "3.8"
 services:
@@ -119,22 +119,22 @@ volumes:
   wordpress:
 ```
 
-### 🚀 Run
+###  Run
 ```bash
 cd 3-wordpress
 docker-compose up -d
 ```
 
-📍 **Access WordPress at:** http://localhost:8080
+ **Access WordPress at:** http://localhost:8080
 
 ---
 
-## 📤 4. Flask File Uploader App (`4-uploader-app/`)
+##  4. Flask File Uploader App (`4-uploader-app/`)
 
-### 📄 Description
+###  Description
 A simple Flask web app that allows users to upload files, which are stored in a Docker volume (`uploads/`).
 
-### 📦 Project Structure
+###  Project Structure
 ```
 4-uploader-app/
 ├── app/
@@ -147,7 +147,7 @@ A simple Flask web app that allows users to upload files, which are stored in a 
 └── requirements.txt
 ```
 
-### 🐳 docker-compose.yml
+###  docker-compose.yml
 ```yaml
 version: '3.8'
 services:
@@ -159,24 +159,24 @@ services:
       - ./uploads:/uploads
 ```
 
-### 🚀 Run
+###  Run
 ```bash
 cd 4-uploader-app
 docker-compose up --build
 ```
 
-📍 **App runs at:** http://localhost:5000  
-📁 **Uploaded files are saved to the `uploads/` directory.**
+ **App runs at:** http://localhost:5000  
+ **Uploaded files are saved to the `uploads/` directory.**
 
 ---
 
-## ✅ Prerequisites
+##  Prerequisites
 
 - Docker
 - Docker Compose
 - Git (optional)
 
-## 📂 Getting Started
+##  Getting Started
 
 ### Clone the Repository
 ```bash
