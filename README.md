@@ -1,58 +1,58 @@
-# Docker Compose Applications Collection
+# 🚀 Dockerized Multi-App Projects
 
-A collection of ready-to-use Docker Compose applications for learning and development purposes.
+This repository contains 4 different Docker Compose-powered applications:
 
-## 📋 Table of Contents
+1. **Simple Node.js Server**
+2. **Todo App + MongoDB**
+3. **WordPress Blog + MySQL**
+4. **Flask File Uploader App**
 
-- [Prerequisites](#prerequisites)
-- [Applications](#applications)
-  - [1. Basic Web App](#1-basic-web-app)
-  - [2. Todo App with MongoDB](#2-todo-app-with-mongodb)
-  - [3. WordPress Blog](#3-wordpress-blog)
-  - [4. Flask File Uploader](#4-flask-file-uploader)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
+Each app is located in its own directory and can be run independently.
 
-## ✅ Prerequisites
+---
 
-Before running these applications, make sure you have the following installed:
+## 📁 Project Structure
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-- Git (optional, for cloning the repository)
+```
+├── 1-docker-compose-app/  → Simple Node.js server
+├── 2-todo-app/           → Todo app with MongoDB
+├── 3-wordpress/          → WordPress blog system
+└── 4-uploader-app/       → Flask-based file uploader
+```
 
-## 🚀 Applications
+---
 
-### 1. Basic Web App (`1-docker-compose-app/`)
+## 🧱 1. Simple Node.js Server (`1-docker-compose-app/`)
 
-A simple web application demonstrating basic Docker Compose setup.
+### 📄 Description
+A basic Node.js HTTP server that returns a greeting message when accessed.
 
-**Docker Compose Configuration:**
+### 🐳 docker-compose.yml
 ```yaml
 version: "3.4"
 services:
-  web-app:
-    container_name: dc-web-app
+  node-server:
     build: .
     ports:
-      - "3001:3001"
+      - "3001:3000"
 ```
 
-**Run the application:**
+### 🚀 Run
 ```bash
 cd 1-docker-compose-app
 docker-compose up --build
 ```
 
-📍 **Access:** http://localhost:3001
+📍 **App runs at:** http://localhost:3001
 
 ---
 
-### 2. Todo App with MongoDB (`2-todo-app/`)
+## 📋 2. Todo App with MongoDB (`2-todo-app/`)
 
-A todo application with MongoDB database backend.
+### 📄 Description
+A todo application with MongoDB database backend for data persistence.
 
-**Docker Compose Configuration:**
+### 🐳 docker-compose.yml
 ```yaml
 version: "3.4"
 services:
@@ -72,21 +72,22 @@ volumes:
   todo-app-data:
 ```
 
-**Run the application:**
+### 🚀 Run
 ```bash
 cd 2-todo-app
 docker-compose up --build
 ```
 
-📍 **Access:** http://localhost:3000
+📍 **App runs at:** http://localhost:3000
 
 ---
 
-### 3. WordPress Blog (`3-wordpress/`)
+## 📝 3. WordPress Blog (`3-wordpress/`)
 
-A complete WordPress blog setup with MySQL database.
+### 📄 Description
+A complete WordPress blog setup with MySQL database backend.
 
-**Docker Compose Configuration:**
+### 🐳 docker-compose.yml
 ```yaml
 version: "3.8"
 services:
@@ -118,34 +119,35 @@ volumes:
   wordpress:
 ```
 
-**Run the application:**
+### 🚀 Run
 ```bash
 cd 3-wordpress
 docker-compose up -d
 ```
 
-📍 **Access:** http://localhost:8080
+📍 **Access WordPress at:** http://localhost:8080
 
 ---
 
-### 4. Flask File Uploader (`4-uploader-app/`)
+## 📤 4. Flask File Uploader App (`4-uploader-app/`)
 
-A Flask web application that allows users to upload files, stored in a Docker volume.
+### 📄 Description
+A simple Flask web app that allows users to upload files, which are stored in a Docker volume (`uploads/`).
 
-**Project Structure:**
+### 📦 Project Structure
 ```
 4-uploader-app/
 ├── app/
 │   ├── app.py
 │   └── templates/
 │       └── index.html
-├── uploads/          # Volume-mounted directory
+├── uploads/              # Volume-mounted directory
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt
 ```
 
-**Docker Compose Configuration:**
+### 🐳 docker-compose.yml
 ```yaml
 version: '3.8'
 services:
@@ -157,59 +159,56 @@ services:
       - ./uploads:/uploads
 ```
 
-**Run the application:**
+### 🚀 Run
 ```bash
 cd 4-uploader-app
 docker-compose up --build
 ```
 
-📍 **Access:** http://localhost:5000  
-📁 **File Storage:** Uploaded files are saved to the `uploads/` directory
+📍 **App runs at:** http://localhost:5000  
+📁 **Uploaded files are saved to the `uploads/` directory.**
 
-## 🏁 Getting Started
+---
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/docker-compose-apps.git
-   cd docker-compose-apps
-   ```
+## ✅ Prerequisites
 
-2. **Navigate to any application directory:**
-   ```bash
-   cd [app-directory-name]
-   ```
+- Docker
+- Docker Compose
+- Git (optional)
 
-3. **Run the application:**
-   ```bash
-   docker-compose up --build
-   ```
+## 📂 Getting Started
 
-## 💡 Usage
+### Clone the Repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-Each application can be launched independently from its respective folder using:
+### Running Applications
+Each app can be launched from its folder using:
 
 ```bash
 docker-compose up --build
 ```
 
-To run applications in the background (detached mode):
+### Common Commands
 ```bash
+# Run in background (detached mode)
 docker-compose up -d --build
-```
 
-To stop running applications:
-```bash
+# Stop running containers
 docker-compose down
-```
 
-To remove volumes and clean up:
-```bash
+# Remove volumes and clean up
 docker-compose down -v
+
+# View logs
+docker-compose logs -f
 ```
 
 
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License.
 
